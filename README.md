@@ -1,2 +1,2 @@
-# validate-js
-A javaScript custom validator, used for forms or whatever.
+# Validate.js
+A customizable validator, used for forms or whatever.
