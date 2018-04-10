@@ -41,7 +41,7 @@ validator.validate("SpookyBooky$!2"); // Returns empty array as it's fine.
 Customizable options.
 
 ### Characters
-The characters that are allowed within the string to be validated. The options for characters are combined with hyphen (-) as concatination.
+`characters: `, the characters that are allowed within the string to be validated. The options for characters are combined with hyphen (-) as concatination.
 
 * alpha, all lower case letters from a - z are acceptable.
 * Alpha, all mixed case letters from A - z are acceptable.
@@ -52,16 +52,16 @@ The characters that are allowed within the string to be validated. The options f
 Passed as string, example: characters: "alpha-numeric";
 
 ### Length 
-minLength, minimum length of the string to be validated, passed as int.
-maxLength, maximum length of the string to be validated, passed as int.
+`minLength: `, minimum length of the string to be validated, passed as int.
+`maxLength: `, maximum length of the string to be validated, passed as int.
 
 ### Special Characters
-mustHave, the amount of special characters it must contain, passed as int.
-mustContain, the type of special characters it must contain, only "special" is valid, passed as string.
+`mustHave: `, the amount of special characters it must contain, passed as int.
+`mustContain: `, the type of special characters it must contain, only "special" is valid, passed as string.
 
 ### Banned or Illegal Inputs
-banned, the exact phrases that are banned, passed as an array of strings or one string.
-bannedContain, the phrases the text cannot contain, passed as an array of strings or one string.
+`banned: `, the exact phrases that are banned, passed as an array of strings or one string.
+`bannedContain: `, the phrases the text cannot contain, passed as an array of strings or one string.
 
 ## Built With
 
