@@ -53,16 +53,16 @@ Customizable options.
 Passed as string, example: characters: "alpha-numeric";
 
 ### Length 
-`minLength: `, minimum length of the string to be validated, passed as int.
-`maxLength: `, maximum length of the string to be validated, passed as int.
+* `minLength: `, minimum length of the string to be validated, passed as int.
+* `maxLength: `, maximum length of the string to be validated, passed as int.
 
 ### Special Characters
-`mustHave: `, the amount of special characters it must contain, passed as int.
-`mustContain: `, the type of special characters it must contain, only "special" is valid, passed as string.
+* `mustHave: `, the amount of special characters it must contain, passed as int.
+* `mustContain: `, the type of special characters it must contain, only "special" is valid, passed as string.
 
 ### Banned or Illegal Inputs
-`banned: `, the exact phrases that are banned, passed as an array of strings or one string.
-`bannedContain: `, the phrases the text cannot contain, passed as an array of strings or one string.
+* `banned: `, the exact phrases that are banned, passed as an array of strings or one string.
+* `bannedContain: `, the phrases the text cannot contain, passed as an array of strings or one string.
 
 ## Built With
 
