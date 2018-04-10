@@ -153,17 +153,3 @@ function createValidator(config) {
 
     return this;
 }
-
-/* Example */
-var allowed = {
-    characters: "Alpha-numeric-special",
-
-    minLength: 4,
-    maxLength: 16,
-
-    mustHave: 2,
-    mustContain: "special", /* Text must contain mustHave number of special characters  */
-
-    banned: ["password", "password123"], /* Cannot be these exact phrases */
-    bannedContain: ["password*", "*1234", "*pizza*"] /* Cannot contain these phrases, use wildcard to include anything after or before. */
-}
