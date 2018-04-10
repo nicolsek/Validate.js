@@ -13,7 +13,8 @@ Include the script.
 ```html 
 <!-- APPLICATION CODE -->
 <script src="validate.min.js">
-<!-- APPLICATION CODE --> ```
+<!-- APPLICATION CODE --> 
+```
 
 Create the config for the validator.
 ```js
