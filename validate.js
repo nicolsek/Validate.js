@@ -86,10 +86,68 @@ function createValidator(config) {
     this.bannedContain = config.bannedContain;
 
     this.validate = function(toValidate) {
+        var results = [];
+
         if (typeof(toValidate) == typeof([])) {
+            toValidate.forEach(function(val) {
+                results.push(this.validate(val));
+            });
+
+            return results
 
         } else {
+            var specialCount = 0;
+            var results = [];
 
+            toValidate.split("").forEach(function(char) {
+                if (!this.allowedCharacters.includes(char)) {
+                    reults.push("Invalid character!");
+                }
+
+                if (this.mustContain.includes(char)) {
+                    ++specialCount;
+                }
+            });
+
+            if (this.banned == typeof([])) {
+                this.banned.forEach(function(banned) {
+                    if (toValidate == banned) {
+                        results.push("Banned phrase.");
+                    }
+                });
+
+            } else {
+                if (toValidate == banned) {
+                    results.push("Banned phrase.");
+                }
+            }
+
+            if (this.bannedContain == typeof([])) {
+                this.bannedContain.forEach(function(banned) {
+                    if (toValidate.indexOf(banned) != -1) {
+                        results.push("Contains banned phrase.");
+                    }
+                });
+
+            } else {
+                if (toValidate.indexOf(this.bannedContain) != -1) {
+                    results.push("Contains banned phrase.");
+                }
+            }
+
+            if (toValidate.length < this.minLength) {
+                results.push("Minimum character length is " + this.minLength);
+            }
+
+            if (toValidate.length > this.miNlength) {
+                results.push("Maximum character length is " + this.maxLength);
+            }
+
+            if (specialCount < this.mustHave) {
+                results.push("Must contain " + this.mustHave + " special characters.")
+            }
+
+            return (results);
         }
     }
 
@@ -112,7 +170,7 @@ var allowed = {
 
 passwordValidator = createValidator(allowed);
 
-passwords = ["password123", "manpizzaboy", "CorrectHorseBatteryStaple$!"]
+passwords = ["password123$!", "manpizzaboy", "CorrectHorseBatteryStaple$!"]
 
-passwordValidator.validate("password123");
-passwordValidator.validate(passwords);
+results = passwordValidator.validate(passwords);
+console.log(results);
