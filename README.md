@@ -17,7 +17,7 @@ var config = {
     mustContain: "special", // The kind of characters it must contain, for now only special is valid.
 
     banned: ["Password", "password", "password123"], // The banned string(s) that should not be valid passwords, can be an array or single string.
-    bannedContain: ["password, $(username)], // Cannot contain the value(s).
+    bannedContain: ["password", $("#username").val()], // Cannot contain the value(s). $ assumes you're using a jquery form or whatever.
 }
 
 var validator = createValidator(validator); // Returns the validator object.
