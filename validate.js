@@ -167,10 +167,3 @@ var allowed = {
     banned: ["password", "password123"], /* Cannot be these exact phrases */
     bannedContain: ["password*", "*1234", "*pizza*"] /* Cannot contain these phrases, use wildcard to include anything after or before. */
 }
-
-passwordValidator = createValidator(allowed);
-
-passwords = ["password123$!", "manpizzaboy", "CorrectHorseBatteryStaple$!"]
-
-results = passwordValidator.validate(passwords);
-console.log(results);
