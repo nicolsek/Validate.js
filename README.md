@@ -12,7 +12,7 @@ The lamest customizable text validator. Built with ease of use and capability in
 Include the script.
 ```html 
 <!-- APPLICATION CODE -->
-<script src="validate.min.js">
+<script src="validate.min.js"></script>
 <!-- APPLICATION CODE --> 
 ```
 
